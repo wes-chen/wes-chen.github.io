@@ -6,3 +6,7 @@
 .bordered {
   margin-top: 20px;
 }
+
+.custom-font {
+  font-family: 'Roboto', sans-serif; !important
+}
