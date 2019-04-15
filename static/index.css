@@ -10,3 +10,7 @@
 .custom-font {
   font-family: 'Fira Sans', sans-serif; !important
 }
+
+body {
+  background-color: whitesmoke;
+}
