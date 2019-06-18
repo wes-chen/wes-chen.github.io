@@ -11,6 +11,14 @@
   font-family: 'Fira Sans', sans-serif; !important
 }
 
+.icon {
+  color: inherit;
+}
+
+.icon:hover {
+  color: #6c757d;
+}
+
 body {
   background-color: whitesmoke;
 }
