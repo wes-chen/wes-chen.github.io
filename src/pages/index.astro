@@ -1,52 +1,74 @@
 ---
 import '../../static/design-tokens-archive.css';
+import SEO from '../components/SEO.astro';
+import experience from '../data/experience.json';
+import projects from '../data/projects.json';
 ---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Space+Mono&display=swap" rel="stylesheet">
-		<title>Wesley Chen | Archival Index</title>
+		<SEO title="Wesley Chen | Software Engineer" />
+		<title>Wesley Chen</title>
 	</head>
 	<body>
 		<main class="archive-grid">
+			<header class="card hero">
+				<h1>Wesley Chen</h1>
+				<p class="subtitle">Software Engineer @ Snap Inc. AI/ML Platform. UCSD Alum.</p>
+				<p>Hello! I'm a software engineer at Snap Inc. on the AI/ML Platform team. I'm always looking to learn more in my field. I received my Master's and Bachelor's degree from the University of California, San Diego (UCSD) in Computer Engineering. While there, I was the President of Triton Software Engineering.</p>
+			</header>
+
 			<section class="card">
-				<h2>Wesley Chen</h2>
-				<p>Software Engineer. Building at the intersection of performance and editorial design.</p>
+				<h2>Experience</h2>
+				{experience.map(exp => (
+					<div class="exp-item">
+						<h3>{exp.title}</h3>
+						<p class="company">{exp.company} — {exp.period}</p>
+						<p>{exp.description}</p>
+					</div>
+				))}
 			</section>
+
 			<section class="card">
 				<h2>Projects</h2>
-				<p>A collection of technical work and architectural experiments.</p>
+				{projects.map(proj => (
+					<div class="proj-item">
+						<h3><a href={proj.url}>{proj.title}</a></h3>
+						<p>{proj.description}</p>
+					</div>
+				))}
 			</section>
-			<section class="card">
-				<h2>Insights</h2>
-				<p>Thoughts on the future of web design and systems engineering.</p>
-			</section>
-			<section class="card">
-				<h2>Contact</h2>
-				<p>Let's collaborate.</p>
-			</section>
+
+            <footer class="card">
+                <h2>Connect</h2>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/wesley-chen/">LinkedIn</a>
+                    <a href="https://github.com/wes-chen/">GitHub</a>
+                    <a href="mailto:wesleche@gmail.com">Email</a>
+                </div>
+            </footer>
 		</main>
 	</body>
 </html>
 
 <style>
-    body { padding: 4rem; }
-    .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+    body { padding: 4rem; max-width: 1000px; margin: auto; background-color: var(--bg); }
+    .archive-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
     .card {
         background-color: var(--card-dim);
-        padding: 2rem;
-        border-radius: 16px;
+        padding: 2.5rem;
+        border-radius: 12px;
         border: var(--border-dim);
         transition: var(--transition);
-        opacity: 0.7;
     }
-    .card:hover {
-        background-color: var(--card-active);
-        border: var(--border-active);
-        opacity: 1;
-        transform: translateY(-5px);
-    }
-    h2 { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); margin-top: 0; }
-    p { font-family: 'Space Mono', monospace; color: var(--text-secondary); }
+    .hero { border-left: 4px solid var(--accent); }
+    h1 { font-family: var(--font-heading); color: var(--accent); font-size: 3.5rem; margin: 0; }
+    .subtitle { font-family: var(--font-body); color: var(--text-primary); font-size: 1.25rem; margin: 1rem 0; }
+    h2 { font-family: var(--font-heading); color: var(--text-primary); border-bottom: 1px solid var(--card-active); padding-bottom: 1rem; }
+    h3 { font-family: var(--font-body); color: var(--text-primary); margin: 1rem 0 0.25rem 0; }
+    p, .company { font-family: var(--font-body); color: var(--text-secondary); font-size: 0.95rem; }
+    .links a { color: var(--accent); margin-right: 1.5rem; font-family: var(--font-body); text-decoration: none; }
 </style>
+EOF
+git add . && git commit -m "refactor: implement clean, content-rich portfolio"
