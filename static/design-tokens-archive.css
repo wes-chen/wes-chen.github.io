@@ -1,0 +1,35 @@
+:root {
+  /* Edgy Neo-Modern Palette (High-Contrast, Bold) */
+  --bg: #0b0c10;           /* Deep Black-Ink */
+  --card-dim: #161a22;      /* Raw Technical Gray */
+  --card-active: #1f2430;   /* Focused Contrast */
+  --text-primary: #f0f4f8;   /* Bright Off-White */
+  --text-secondary: #8e9aaf; /* Muted Technical Gray */
+  --accent: #ff4757;        /* Edgy, Bold "Danger" Red */
+
+  /* Spotlight System */
+  --transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  --border-dim: 1px solid rgba(255, 255, 255, 0.08);
+  --border-active: 1px solid rgba(255, 71, 87, 0.4);
+
+  /* Typography (Neo-Modern Pairing) */
+  --font-heading: 'Migra', serif;
+  --font-body: 'Neue Montreal Mono', monospace;
+  --leading: 1.3;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: var(--leading);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
