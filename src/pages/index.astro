@@ -1,17 +1,52 @@
 ---
-
+import '../static/design-tokens-archive.css';
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Space+Mono&display=swap" rel="stylesheet">
+		<title>Wesley Chen | Archival Index</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main class="archive-grid">
+			<section class="card">
+				<h2>Wesley Chen</h2>
+				<p>Software Engineer. Building at the intersection of performance and editorial design.</p>
+			</section>
+			<section class="card">
+				<h2>Projects</h2>
+				<p>A collection of technical work and architectural experiments.</p>
+			</section>
+			<section class="card">
+				<h2>Insights</h2>
+				<p>Thoughts on the future of web design and systems engineering.</p>
+			</section>
+			<section class="card">
+				<h2>Contact</h2>
+				<p>Let's collaborate.</p>
+			</section>
+		</main>
 	</body>
 </html>
+
+<style>
+    body { padding: 4rem; }
+    .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+    .card {
+        background-color: var(--card-dim);
+        padding: 2rem;
+        border-radius: 16px;
+        border: var(--border-dim);
+        transition: var(--transition);
+        opacity: 0.7;
+    }
+    .card:hover {
+        background-color: var(--card-active);
+        border: var(--border-active);
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+    h2 { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); margin-top: 0; }
+    p { font-family: 'Space Mono', monospace; color: var(--text-secondary); }
+</style>
