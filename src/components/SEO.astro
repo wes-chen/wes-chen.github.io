@@ -1,0 +1,10 @@
+---
+const { title, description } = Astro.props;
+---
+<meta name="description" content={description || "Wesley Chen's portfolio."} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Wesley Chen",
+  "url": "https://wes-chen.github.io"
+})} />
