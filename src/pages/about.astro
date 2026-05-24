@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import experience from '../data/experience.json';
+import projects from '../data/projects.json';
+---
+<Base title="About" description="About Wesley Chen — Software Engineer at Snap Inc.">
+  <h1>About</h1>
+
+  <p>
+    I'm a software engineer at Snap Inc. on the AI/ML Platform team, where I work on unified training
+    infrastructure for machine learning at scale. Before that I spent time at Amazon in chaos engineering.
+    I got my Master's and Bachelor's degrees from UC San Diego in Computer Engineering, and was president
+    of Triton Software Engineering while I was there.
+  </p>
+
+  <p>
+    <a href="https://www.linkedin.com/in/wesley-chen/">LinkedIn</a>
+    {' · '}
+    <a href="https://github.com/wes-chen/">GitHub</a>
+    {' · '}
+    <a href="mailto:wesleche@gmail.com">Email</a>
+  </p>
+
+  <h2>Experience</h2>
+  {experience.map(exp => (
+    <div class="exp-item">
+      <p class="exp-title">{exp.title}</p>
+      <p class="exp-meta">{exp.company} — {exp.period}</p>
+      <p>{exp.description}</p>
+    </div>
+  ))}
+
+  <h2>Projects</h2>
+  {projects.map(proj => (
+    <div class="exp-item">
+      <p class="exp-title"><a href={proj.url}>{proj.title}</a></p>
+      <p>{proj.description}</p>
+    </div>
+  ))}
+</Base>

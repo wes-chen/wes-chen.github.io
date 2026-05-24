@@ -1,0 +1,317 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #faf9f7;
+  --text: #1a1917;
+  --muted: #6b6760;
+  --link: #1a1917;
+  --max-w: 680px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 1.25rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ───────────────────────────── */
+
+header {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2rem 0 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e2dc;
+}
+
+.site-name {
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text);
+}
+
+nav {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.sep {
+  margin: 0 0.4rem;
+  color: var(--muted);
+}
+
+/* ── Main content ─────────────────────── */
+
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+/* ── Post list (index) ────────────────── */
+
+ul.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.post-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e5e2dc;
+}
+
+ul.post-list li:first-child {
+  border-top: 1px solid #e5e2dc;
+}
+
+ul.post-list a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+ul.post-list a:hover {
+  text-decoration: underline;
+}
+
+ul.post-list time {
+  font-size: 0.875rem;
+  color: var(--muted);
+  white-space: nowrap;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.empty {
+  color: var(--muted);
+}
+
+/* ── Post page ────────────────────────── */
+
+article .post-header {
+  margin-bottom: 2rem;
+}
+
+article h1 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin: 0 0 0.4rem;
+}
+
+article .post-header time {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ── About page ───────────────────────── */
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 2.5rem 0 1rem;
+  border-bottom: 1px solid #e5e2dc;
+  padding-bottom: 0.4rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.exp-item {
+  margin-bottom: 1.5rem;
+}
+
+.exp-title {
+  font-weight: bold;
+  margin: 0 0 0.15rem;
+}
+
+.exp-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0 0 0.4rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ── Prose (post body) ────────────────── */
+
+.prose h2,
+.prose h3 {
+  margin-top: 2rem;
+}
+
+.prose pre {
+  background: #f0ede8;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.prose code {
+  font-size: 0.875rem;
+  background: #f0ede8;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left: 3px solid #c9c4bc;
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+/* ── Links ────────────────────────────── */
+
+a {
+  color: var(--link);
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Front door (homepage only) ───────── */
+
+@font-face {
+  font-family: 'Syne Wall';
+  font-style: normal;
+  font-weight: 800;
+  font-display: optional;
+  src: url('/fonts/syne-wall.woff2') format('woff2');
+}
+
+
+body.front {
+  background: #050504;
+  color: #f5f3ef;
+  /* flip to `paused` for a static wall */
+  --tile-play: running;
+}
+
+body.front header,
+body.front main {
+  position: relative;
+  z-index: 1;
+}
+
+body.front .site-name,
+body.front nav a {
+  color: #f5f3ef;
+}
+
+body.front nav,
+body.front .sep {
+  color: #8c877d;
+}
+
+body.front header {
+  border-bottom-color: rgba(245, 243, 239, 0.14);
+}
+
+body.front ul.post-list li,
+body.front ul.post-list li:first-child {
+  border-color: rgba(245, 243, 239, 0.12);
+}
+
+body.front ul.post-list a {
+  color: #f5f3ef;
+}
+
+body.front ul.post-list time,
+body.front .empty {
+  color: #8c877d;
+}
+
+/* tiled wordmark wall */
+
+.tile-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.tile-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 58% at 50% 42%, rgba(5, 5, 4, 0.72), rgba(5, 5, 4, 0) 76%);
+}
+
+.tile-row {
+  overflow: hidden;
+}
+
+.tile-track {
+  display: flex;
+  width: max-content;
+  font-family: 'Syne Wall', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 9vw, 6rem);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: #141311;
+  animation: tile-drift var(--dur, 165s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  animation-play-state: var(--tile-play, running);
+}
+
+/* trailing margin per word (not flex gap) keeps the track perfectly
+   periodic, so the -50% loop is seamless with no jump */
+.tile-track span {
+  margin-right: 0.35em;
+}
+
+.tile-row:nth-child(even) .tile-track {
+  animation-direction: reverse;
+}
+
+@keyframes tile-drift {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile-track { animation: none; }
+}
