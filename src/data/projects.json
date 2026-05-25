@@ -1,0 +1,17 @@
+[
+  {
+    "title": "shitalké",
+    "description": "A webapp to help students find the best restroom at UCSD.",
+    "url": "https://www.shitalke.com"
+  },
+  {
+    "title": "build-a-website",
+    "description": "A course to teach high school students how to build their own website. Aims to inspire interest in the field of Computer Science.",
+    "url": "https://tritonse.github.io/build-a-website"
+  },
+  {
+    "title": "Triton Day Talk",
+    "description": "Hosting a virtual talk for incoming UCSD students to teach them tips and tricks to succeed early in their careers in the software engineering field.",
+    "url": "https://youtu.be/v2AsGIipLhQ"
+  }
+]

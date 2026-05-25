@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/design-tokens-archive.css">
+    <!-- Migra and Neue Montreal Mono are typically licensed; using Google Font equivalents for preview -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .archive-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .card {
+            background-color: var(--card-dim);
+            padding: 2rem;
+            border-radius: 16px;
+            border: var(--border-dim);
+            transition: var(--transition);
+            opacity: 0.7;
+            width: 300px;
+        }
+        .card:hover {
+            background-color: var(--card-active);
+            border: var(--border-active);
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+        /* Overriding preview font for demonstration */
+        h2 { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); margin-top: 0; }
+        p { font-family: 'Space Mono', monospace; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <div class="archive-grid">
+        <div class="card">
+            <h2>Archive 01</h2>
+            <p>Hover to spotlight.</p>
+        </div>
+        <div class="card">
+            <h2>Archive 02</h2>
+            <p>Raw, technical energy.</p>
+        </div>
+    </div>
+</body>
+</html>

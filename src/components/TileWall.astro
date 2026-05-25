@@ -1,0 +1,30 @@
+---
+// The self-hosted wall font (see the *-wall @font-face in style.css) is
+// glyph-SUBSET to exactly the letters in this phrase. Changing the phrase
+// requires re-subsetting the font, or missing letters silently fall back.
+const tilePhrase = 'Wesley Chen';
+const tileRows = 14;
+const tilePerHalf = 6;
+
+// Slow, organic drift: each row gets a varied (deterministic) duration + phase
+const tileBase = 720; // seconds — slower-than-glacial base crawl
+// NOTE: `tilePerHalf * 2` must stay EVEN. The wall's CSS animation uses
+// `translateX(-50%)` and relies on the track being two identical halves; an
+// odd span count would break the seamless loop.
+const tileTracks = Array.from({ length: tileRows }, (_, i) => {
+  const dur = Math.round(tileBase + Math.sin(i * 1.7) * 100);       // ~620–820s, varies per row
+  const delay = -Math.round((Math.sin(i * 2.3) * 0.5 + 0.5) * dur); // phase spread across full cycle
+  return { dur, delay };
+});
+---
+<div class="tile-bg" aria-hidden="true">
+  {tileTracks.map((t) => (
+    <div class="tile-row">
+      <div class="tile-track" style={`--dur:${t.dur}s;--delay:${t.delay}s`}>
+        {Array.from({ length: tilePerHalf * 2 }).map(() => (
+          <span>{tilePhrase}</span>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
