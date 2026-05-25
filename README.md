@@ -1,43 +1,84 @@
-# Astro Starter Kit: Minimal
+# wes-chen.github.io
+
+Personal blog and portfolio for Wesley Chen, built with [Astro 6](https://astro.build) and deployed to GitHub Pages at [wes-chen.github.io](https://wes-chen.github.io).
+
+A static, text-first site — no SSR adapter and no framework components. Everything is `.astro` or `.md`.
+
+## Development
+
+Requires Node `>=22.12`.
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install       # install dependencies
+npm run dev       # dev server at localhost:4321
+npm run build     # static output to dist/
+npm run preview   # preview the built output locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/
+  pages/
+    index.astro          # blog index (post list)
+    about.astro          # about page
+    blog/*.md            # blog posts
+  layouts/
+    Base.astro           # shared shell — header, nav, <html>
+    Post.astro           # wraps Base for blog posts
+  components/
+    TileWall.astro       # animated wordmark background (homepage only)
+    SEO.astro            # <meta> helpers
+  data/
+    experience.json      # work history rendered on /about
+    projects.json        # projects rendered on /about
+public/
+  style.css              # all styles — single file, CSS custom properties
+  fonts/syne-wall.woff2  # glyph-subsetted to "Wesley Chen" only
+  favicon.ico / favicon.svg
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Adding a blog post
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Create `src/pages/blog/<slug>.md` with this frontmatter:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```markdown
+---
+layout: ../../layouts/Post.astro
+title: Post Title
+date: YYYY-MM-DD
+description: One-sentence description.
+draft: false
+---
+```
 
-## 🧞 Commands
+Set `draft: true` to hide a post from the index without deleting it.
 
-All commands are run from the root of the project, from a terminal:
+## Content data
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+`src/data/experience.json` and `src/data/projects.json` drive the About page.
 
-## 👀 Want to learn more?
+- **Experience** fields: `title`, `company`, `period`, `description`, `url` (optional — rendered inline after description).
+- **Project** fields: `title`, `description`, `url` (title link), `sourceUrl` (optional — renders as "· source" next to title).
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Styles
+
+`public/style.css` is the single stylesheet. CSS custom properties are defined on `:root`:
+
+- `--bg`, `--text`, `--muted`, `--link` — colour palette
+- `--max-w: 680px` — content column width
+
+The homepage overrides these under `body.front` (dark background, light text, animated tile wall).
+
+## Gotchas
+
+- **Font subset.** `public/fonts/syne-wall.woff2` is subset to exactly the glyphs in `"Wesley Chen"`. The wordmark phrase is defined in `src/components/TileWall.astro` (`tilePhrase`). Changing that string makes out-of-subset letters silently fall back to system fonts — re-subset the font if you change it.
+- **`tilePerHalf * 2` must be even.** The tile-wall animation uses `translateX(-50%)` on a track of two identical halves; an odd span count breaks the seamless loop.
+
+## Deployment
+
+Pushes to `master` trigger the [GitHub Pages workflow](.github/workflows/deploy.yml), which builds with `withastro/action` and deploys via `actions/deploy-pages`.
+
+## License
+
+[MIT](LICENSE)
