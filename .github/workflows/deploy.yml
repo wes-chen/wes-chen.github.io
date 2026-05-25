@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -10,9 +11,9 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment, cancelling in-progress runs.
+# One run per ref; a newer push/PR update cancels the in-flight one.
 concurrency:
-  group: pages
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -27,6 +28,8 @@ jobs:
           node-version: 22
 
   deploy:
+    # Build runs on every PR for CI; only push/dispatch actually deploys.
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
