@@ -1,3 +1,11 @@
+---
+  layout: ../../layouts/Post.astro
+  title: Learning With AI
+  date: 2026-05-25
+  description: Ew, AI. Yes. But how do we exploit it?
+  draft: true
+---
+
 As AI adoption becomes more widespread, we ultimately need to shift our attention towards how we harness it to enrich our lives rather than outsourcing critical thought to LLMs. The overarching cautionary tale is to [avoid having AI do thinking for you](https://news.harvard.edu/gazette/story/2025/11/is-ai-dulling-our-minds/), but responsibility of the guardrail is still left to the user.
 
 In this post I want to explore an in depth tale of how we can use AI to learn rather than giving up the abstractions to 
