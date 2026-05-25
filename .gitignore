@@ -9,4 +9,5 @@ dist/
 .env.*
 !.env.example
 .cache/
+agreeable-altitude/
 EOF
