@@ -135,6 +135,7 @@ ul.post-list time {
 /* ── Post page ────────────────────────── */
 
 article .post-header {
+  display: block;
   margin-bottom: 2rem;
 }
 
