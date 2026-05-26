@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://wes-chen.github.io/sitemap.xml
+
 # AI crawlers — writing is © Wesley Chen, all rights reserved
 User-agent: GPTBot
 Disallow: /
