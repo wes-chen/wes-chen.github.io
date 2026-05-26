@@ -69,6 +69,21 @@ main {
   padding: 2.5rem 0 4rem;
 }
 
+/* ── Footer ───────────────────────────── */
+
+footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 /* ── Post list (index) ────────────────── */
 
 ul.post-list {
@@ -129,6 +144,13 @@ article h1 {
   margin: 0 0 0.4rem;
 }
 
+article .post-subtitle {
+  margin: 0.25rem 0 0.6rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: #b8b3ac;
+}
+
 article .post-header time {
   font-size: 0.875rem;
   color: var(--muted);
@@ -179,9 +201,18 @@ p {
 .prose pre {
   background: var(--code-bg);
   padding: 1rem;
-  overflow-x: auto;
   border-radius: 4px;
   font-size: 0.875rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Shiki emits overflow-x:auto as an inline style; override it so long lines wrap */
+.astro-code,
+.astro-code code {
+  overflow-x: visible !important;
+  white-space: pre-wrap !important;
+  word-break: break-word;
 }
 
 .prose code {
@@ -253,9 +284,19 @@ body.front {
 }
 
 body.front header,
-body.front main {
+body.front main,
+body.front footer {
   position: relative;
   z-index: 1;
+}
+
+body.front footer {
+  border-top-color: rgba(245, 243, 239, 0.14);
+  color: #8c877d;
+}
+
+body.front footer a {
+  color: #8c877d;
 }
 
 body.front .site-name,
