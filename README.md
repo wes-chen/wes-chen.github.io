@@ -81,4 +81,6 @@ Pushes to `master` trigger the [GitHub Pages workflow](.github/workflows/deploy.
 
 ## License
 
-[MIT](LICENSE)
+Source code is [MIT](LICENSE).
+
+Writing in `src/pages/blog/` is © Wesley Chen, all rights reserved — not covered by the MIT license.
