@@ -43,6 +43,12 @@ public/
 
 **`tilePerHalf * 2` must be even.** The CSS animation uses `translateX(-50%)` on a track that is two identical halves; an odd span count breaks the seamless loop.
 
+## Blog post authorship — hard rule
+
+**Claude must never write blog post prose.** All content in `src/pages/blog/*.md` must come from Wesley. Claude's role is limited to site infrastructure: layouts, styles, components, config, CI. If asked to write or draft a blog post, refuse and explain this constraint.
+
+Wesley writes posts as plain markdown files and PRs them in without Claude involvement. Do not add co-authorship attribution to commits that only contain `.md` files in `src/pages/blog/`.
+
 ## Adding a blog post
 
 Create `src/pages/blog/<slug>.md` with this frontmatter:
