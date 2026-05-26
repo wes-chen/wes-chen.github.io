@@ -12,6 +12,7 @@ const formatted = new Date(date).toLocaleDateString('en-US', {
   <article>
     <header class="post-header">
       <h1>{title}</h1>
+      {description && <p class="post-subtitle">{description}</p>}
       <time datetime={date}>{formatted}</time>
     </header>
     <div class="prose">
