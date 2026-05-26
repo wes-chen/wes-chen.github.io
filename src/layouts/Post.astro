@@ -1,19 +1,19 @@
 ---
 import Base from './Base.astro';
+import { formatDateDisplay, formatDateAttr } from '../lib/date';
 
 const { frontmatter } = Astro.props;
 const { title, date, description } = frontmatter;
 
-const formatted = new Date(date).toLocaleDateString('en-US', {
-  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
-});
+const formatted = formatDateDisplay(date, 'long');
+const dateAttr = formatDateAttr(date);
 ---
 <Base title={title} description={description}>
   <article>
     <header class="post-header">
       <h1>{title}</h1>
       {description && <p class="post-subtitle">{description}</p>}
-      <time datetime={date}>{formatted}</time>
+      <time datetime={dateAttr}>{formatted}</time>
     </header>
     <div class="prose">
       <slot />
