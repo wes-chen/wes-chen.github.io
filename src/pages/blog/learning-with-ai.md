@@ -6,7 +6,9 @@ description: Ew, AI. Yes. But how do we exploit it?
 draft: true
 ---
 
-At work, a staff software engineer and I were working through how to build my agentic service. He asserted that we should try really hard to separate concerns as a core design principle and while I agreed with him, I struggled to communicate a sketch on how I would implement it in my service. He then told me to “work on my fundamentals” and that hurt quite a bit. But it was incredibly motivating and he pointed me towards a [technical blog from Temporal](https://temporal.io/blog/google-adk-temporal-integration-bts) for an example of how to execute this separation, and while helpful, I quickly realized I didn’t really understand the internals of Temporal, a framework that guarantees reliable execution of long multi-step jobs. I had relied on this framework indirectly every day at work, and with AI I thought I could keep getting away with not knowing it, since surely it could solve everything for me, right? However, my ego paid the price when I was actually tested by someone well versed.
+At work, a staff software engineer and I were working through how to build my agentic service. He asserted that we should try really hard to separate concerns as a core design principle and while I agreed with him, I struggled to communicate a sketch on how I would implement it in my service. He then told me to “work on my fundamentals” and that hurt quite a bit.
+
+But it was incredibly motivating and he pointed me towards a [technical blog from Temporal](https://temporal.io/blog/google-adk-temporal-integration-bts) for an example of how to execute this separation, and while helpful, I quickly realized I didn’t really understand the internals of Temporal, a framework that guarantees reliable execution of long multi-step jobs. I had relied on this framework indirectly every day at work, and with AI I thought I could keep getting away with not knowing it, since surely it could solve everything for me, right? However, my ego paid the price when I was actually tested by someone well versed.
 
 The natural inclination to read docs is a great intuition. However sometimes it can be difficult to navigate: hard to find, you’re not in the target audience, disjoint vocabulary. AI tools can be incredibly useful to overcome these gaps, as long as you know how to prompt them. Similarly, verbatim prompts out of the box are quite hard to share as everyone interacts with their AI tools differently (different memory systems, output styles, skills). The key point is that you should guide your AI tool to teach you in a way that works for you. For me it could look like the following:
 
@@ -22,7 +24,7 @@ You don’t want the LLM to repeat what you already know, but giving it an examp
 Same thing with forward looking guidance. Imagine I asked you to teach me about your life. That’s super vague and is unfair to both of us without further guidance. If you don’t specify what you want, garbage in, garbage out.
 
 ### Make AI interview you to define your goal thoroughly
-Many times I find that my prompt is insufficient in detail, or it's fuzzy what exactly I want to execute. Give the AI a fighting chance to orient itself through AskUserQuestion - it’s just a few multiple choice questions!
+Many times I find that my prompt is insufficient in detail, or it's fuzzy what exactly I want to execute. Give the AI a fighting chance to orient itself through asking you a few multiple choice questions!
 
 ### Ask questions to the AI
 This is where AI becomes a 1:1 teacher rather than just a lecture series. You get the benefit of personal tutoring, but if you don’t ask, it’ll assume you understand the material. One technique I use is I try to type back my understanding of the concept in my own words, and ask if this understanding is correct.
