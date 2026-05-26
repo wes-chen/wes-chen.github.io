@@ -201,9 +201,18 @@ p {
 .prose pre {
   background: var(--code-bg);
   padding: 1rem;
-  overflow-x: auto;
   border-radius: 4px;
   font-size: 0.875rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Shiki emits overflow-x:auto as an inline style; override it so long lines wrap */
+.astro-code,
+.astro-code code {
+  overflow-x: visible !important;
+  white-space: pre-wrap !important;
+  word-break: break-word;
 }
 
 .prose code {
