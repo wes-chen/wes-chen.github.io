@@ -41,4 +41,5 @@ Learning is continuous. Give AI a chance to continue the loop by building off th
 
 Working with these intuitions in your head as your prompt should give you higher quality responses. Surprisingly this has enabled me to learn concepts way faster than I used to before. Now the hard part is developing habits to apply this methodology to continuously learn new things…
 
-As AI adoption becomes more widespread, we ultimately need to shift our attention towards how we harness it to enrich our lives rather than outsourcing critical thought to LLMs. The overarching cautionary tale is to [avoid having AI do thinking for you](https://news.harvard.edu/gazette/story/2025/11/is-ai-dulling-our-minds/), but responsibility of the guardrail is still left to the user.
+Navigating the line between actually learning something with AI versus [using it as a crutch to hide your weaknesses](https://news.harvard.edu/gazette/story/2025/11/is-ai-dulling-our-minds/) is what differentiates the strong and the weak in this constantly evolving AI world. Discovering new methodologies and tools to reinforce this discipline will help keep humanity in control, rather than losing agency to a third party.
+
