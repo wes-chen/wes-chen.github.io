@@ -3,10 +3,12 @@
 }
 
 :root {
-  --bg: #faf9f7;
-  --text: #1a1917;
-  --muted: #6b6760;
-  --link: #1a1917;
+  --bg: #050504;
+  --text: #f5f3ef;
+  --muted: #8c877d;
+  --link: #f5f3ef;
+  --border: rgba(245, 243, 239, 0.14);
+  --code-bg: #24292e;
   --max-w: 680px;
 }
 
@@ -30,7 +32,7 @@ header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  border-bottom: 1px solid #e5e2dc;
+  border-bottom: 1px solid var(--border);
 }
 
 .site-name {
@@ -81,11 +83,11 @@ ul.post-list li {
   align-items: baseline;
   gap: 1rem;
   padding: 0.6rem 0;
-  border-bottom: 1px solid #e5e2dc;
+  border-bottom: 1px solid var(--border);
 }
 
 ul.post-list li:first-child {
-  border-top: 1px solid #e5e2dc;
+  border-top: 1px solid var(--border);
 }
 
 ul.post-list a {
@@ -143,7 +145,7 @@ h1 {
 h2 {
   font-size: 1.1rem;
   margin: 2.5rem 0 1rem;
-  border-bottom: 1px solid #e5e2dc;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.4rem;
 }
 
@@ -175,7 +177,7 @@ p {
 }
 
 .prose pre {
-  background: #f0ede8;
+  background: var(--code-bg);
   padding: 1rem;
   overflow-x: auto;
   border-radius: 4px;
@@ -184,7 +186,7 @@ p {
 
 .prose code {
   font-size: 0.875rem;
-  background: #f0ede8;
+  background: var(--code-bg);
   padding: 0.1em 0.3em;
   border-radius: 3px;
 }
@@ -195,7 +197,7 @@ p {
 }
 
 .prose blockquote {
-  border-left: 3px solid #c9c4bc;
+  border-left: 3px solid var(--muted);
   margin: 1.5rem 0;
   padding-left: 1rem;
   color: var(--muted);
