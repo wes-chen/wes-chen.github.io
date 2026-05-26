@@ -3,7 +3,7 @@ layout: ../../layouts/Post.astro
 title: Learning With AI
 date: 2026-05-25
 description: Ew, AI. Yes. But how do we exploit it?
-draft: true
+draft: false
 ---
 
 At work, a staff software engineer and I were working through how to build my agentic service. He asserted that we should try really hard to separate concerns as a core design principle and while I agreed with him, I struggled to communicate a sketch on how I would implement it in my service. He then told me to “work on my fundamentals” and that hurt quite a bit.
