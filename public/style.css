@@ -110,6 +110,13 @@ ul.post-list time {
   color: var(--muted);
 }
 
+.human-note {
+  margin-top: 2rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
 /* ── Post page ────────────────────────── */
 
 article .post-header {
