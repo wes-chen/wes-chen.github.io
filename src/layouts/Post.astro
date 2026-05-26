@@ -4,8 +4,8 @@ import Base from './Base.astro';
 const { frontmatter } = Astro.props;
 const { title, date, description } = frontmatter;
 
-const formatted = new Date(date + 'T12:00:00').toLocaleDateString('en-US', {
-  year: 'numeric', month: 'long', day: 'numeric'
+const formatted = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
 });
 ---
 <Base title={title} description={description}>

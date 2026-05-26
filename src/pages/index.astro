@@ -13,8 +13,8 @@ const sorted = posts
   ) : (
     <ul class="post-list">
       {sorted.map(post => {
-        const formatted = new Date(post.frontmatter.date + 'T12:00:00').toLocaleDateString('en-US', {
-          year: 'numeric', month: 'short', day: 'numeric'
+        const formatted = new Date(post.frontmatter.date).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC'
         });
         return (
           <li>
@@ -25,4 +25,5 @@ const sorted = posts
       })}
     </ul>
   )}
+  <p class="human-note">All writing is my own — no AI-generated content.</p>
 </Base>

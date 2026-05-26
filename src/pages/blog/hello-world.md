@@ -3,7 +3,7 @@ layout: ../../layouts/Post.astro
 title: Hello World
 date: 2026-05-24
 description: Why I'm starting to write.
-draft: false
+draft: true
 ---
 
 I've been meaning to start a blog for a few years. The usual excuses applied: not enough time, nothing interesting enough to say, someone smarter has already written about this.
