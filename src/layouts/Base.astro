@@ -13,6 +13,7 @@ const pageTitle = title ? `${title} — Wesley Chen` : 'Wesley Chen';
   <link rel="icon" href="/favicon.ico" />
   {front && <link rel="preload" href="/fonts/syne-wall.woff2" as="font" type="font/woff2" crossorigin />}
   <link rel="stylesheet" href="/style.css" />
+  <meta name="robots" content="noai, noimage" />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Person",
@@ -33,5 +34,8 @@ const pageTitle = title ? `${title} — Wesley Chen` : 'Wesley Chen';
   <main>
     <slot />
   </main>
+  <footer>
+    <p>Source code is <a href="https://github.com/wes-chen/wes-chen.github.io/blob/master/LICENSE">MIT</a>. Writing is &copy; Wesley Chen, all rights reserved.</p>
+  </footer>
 </body>
 </html>

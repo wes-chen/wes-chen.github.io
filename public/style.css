@@ -69,6 +69,21 @@ main {
   padding: 2.5rem 0 4rem;
 }
 
+/* ── Footer ───────────────────────────── */
+
+footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 /* ── Post list (index) ────────────────── */
 
 ul.post-list {
@@ -233,9 +248,19 @@ body.front {
 }
 
 body.front header,
-body.front main {
+body.front main,
+body.front footer {
   position: relative;
   z-index: 1;
+}
+
+body.front footer {
+  border-top-color: rgba(245, 243, 239, 0.14);
+  color: #8c877d;
+}
+
+body.front footer a {
+  color: #8c877d;
 }
 
 body.front .site-name,
