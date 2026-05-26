@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { formatDateDisplay, formatDateAttr } from '../lib/date';
 
 const allPosts = import.meta.glob('./blog/*.md', { eager: true });
 const posts = Object.values(allPosts) as any[];
@@ -13,13 +14,12 @@ const sorted = posts
   ) : (
     <ul class="post-list">
       {sorted.map(post => {
-        const formatted = new Date(post.frontmatter.date).toLocaleDateString('en-US', {
-          year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC'
-        });
+        const formatted = formatDateDisplay(post.frontmatter.date, 'short');
+        const dateAttr = formatDateAttr(post.frontmatter.date);
         return (
           <li>
             <a href={post.url}>{post.frontmatter.title}</a>
-            <time datetime={post.frontmatter.date}>{formatted}</time>
+            <time datetime={dateAttr}>{formatted}</time>
           </li>
         );
       })}
