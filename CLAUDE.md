@@ -46,6 +46,8 @@ public/
 
 ## Key constraints
 
+**Self-host all assets; avoid runtime external/CDN calls.** One intentional exception: GoatCounter analytics (`gc.zgo.at`) loads `//gc.zgo.at/count.js` at runtime for basic privacy-friendly page metrics (#19 / #29). Do not remove it as a "fix."
+
 **Font subset — do not change the wordmark phrase without re-subsetting.**
 `public/fonts/syne-wall.woff2` is subset to exactly the glyphs in `"Wesley Chen"`. The phrase is defined in `src/components/TileWall.astro` (`tilePhrase`). If you change that string, letters outside the subset will silently fall back to system fonts.
 
