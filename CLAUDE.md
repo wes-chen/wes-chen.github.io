@@ -2,6 +2,10 @@
 
 Personal blog and portfolio for Wesley Chen, built with Astro 6. Deployed to GitHub Pages at `wes-chen.github.io`.
 
+## Content Rules
+
+Do not write or generate prose for blog posts — human-authored content only. The site separates human writing from AI-built structure.
+
 ## Commands
 
 ```sh
@@ -10,6 +14,10 @@ npm run dev       # dev server at localhost:4321
 npm run build     # static output to dist/
 npm run preview   # preview the built output locally
 ```
+
+## Astro Conventions
+
+This is a static blog (Astro). Place assets in `public/` not `static/`, and use `import.meta.glob` instead of the deprecated `Astro.glob` API.
 
 ## Architecture
 
@@ -74,6 +82,18 @@ Set `draft: true` to hide a post from the index without deleting it.
 Experience entry fields: `title`, `company`, `period`, `description`, `url` (optional — rendered inline after description).
 
 Project entry fields: `title`, `description`, `url` (title link), `sourceUrl` (optional — renders as "· source" next to title).
+
+## Git & Safety Guardrails
+
+Never force-push and never attempt to self-modify `settings.json` or files in the hooks directory without explicit user confirmation.
+
+## CI / Branch Protection
+
+Branch protection on main requires a passing `build` check; ensure the CI workflow defines it before attempting a squash-merge.
+
+## PR Workflow
+
+Always verify the build succeeds (`npm run build`) and inspect the generated HTML/output before opening a PR.
 
 ## Styles
 
